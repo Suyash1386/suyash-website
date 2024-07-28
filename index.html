@@ -13,7 +13,7 @@
             color: #333;
         }
         header {
-            background: url('background.jpg') no-repeat center center;
+            background: url('header-background.jpg') no-repeat center center;
             background-size: cover;
             color: white;
             padding: 2rem 0;
@@ -29,14 +29,37 @@
             justify-content: center;
             background: #333;
         }
-        nav a {
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
             color: white;
-            padding: 0.5rem 1rem;
+            padding: 1rem;
             text-decoration: none;
             text-transform: uppercase;
+            display: block;
         }
-        nav a:hover {
+        nav ul li a:hover {
             background: #575757;
+        }
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #333;
+        }
+        nav ul li:hover ul {
+            display: block;
+        }
+        nav ul li ul li {
+            width: 200px;
         }
         .container {
             padding: 2rem;
@@ -50,27 +73,41 @@
             text-align: center;
             padding: 1rem 0;
         }
+        .background {
+            background: url('section-background.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 2rem;
+            color: white;
+        }
     </style>
 </head>
 <body>
     <header>
-        <img src="background.jpg" alt="Suyash Shrivastava">
+        <img src="profile.jpg" alt="Suyash Shrivastava">
         <h1>Suyash Shrivastava</h1>
         <p>SRF | Analog Mixed Signal Designer | IEEE Student Member | CASS Student Member | SERB ITS</p>
     </header>
     <nav>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a>
+                <ul>
+                    <li><a href="#project1">Project 1</a></li>
+                    <li><a href="#project2">Project 2</a></li>
+                    <li><a href="#project3">Project 3</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
     <div class="container">
         <section id="about" class="section">
             <h2>About Me</h2>
             <p>I am a highly motivated and results-driven Ph.D. student specializing in Analog Mixed-Signal Design at the Indian Institute of Science Education and Research (IISER) Bhopal. With a strong foundation in Analog Design & Layout, I have hands-on experience in Circuit Design, Simulation, and Post Layout Simulations. My work includes designing high-performance TFT-based circuits like Comparators and Oscillators, as well as basic analog blocks such as op-amps, current mirrors, and differential amplifiers.</p>
         </section>
-        <section id="experience" class="section">
+        <section id="experience" class="section background">
             <h2>Experience</h2>
             <ul>
                 <li>Senior Research Fellow (SRF) at IISER Bhopal</li>
@@ -91,13 +128,13 @@
                 <li>Process Technologies: 45nm, 65nm, 180nm, Flexible 800nm</li>
             </ul>
         </section>
-        <section id="projects" class="section">
+        <section id="projects" class="section background">
             <h2>Projects</h2>
             <p>Some of the key projects I have worked on include:</p>
             <ul>
-                <li>Design of high-performance TFT-based Comparators</li>
-                <li>Development of Oscillators for flexible electronics</li>
-                <li>Various custom analog blocks (op-amps, current mirrors, differential amplifiers)</li>
+                <li id="project1">Design of high-performance TFT-based Comparators</li>
+                <li id="project2">Development of Oscillators for flexible electronics</li>
+                <li id="project3">Various custom analog blocks (op-amps, current mirrors, differential amplifiers)</li>
             </ul>
         </section>
         <section id="contact" class="section">
